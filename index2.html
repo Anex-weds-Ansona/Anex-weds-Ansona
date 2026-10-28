@@ -46,12 +46,16 @@
 
     .overlay {
       position: absolute;
-      inset: 0;
-      padding: 10% 14% 11%;
+      inset: 7.3% 11.5% 6.2%;
+      padding: 2.8% 4.8% 4.5%;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      background: #fefbf3;
+      border: 1px solid rgba(186, 150, 78, 0.45);
+      outline: 1px solid rgba(186, 150, 78, 0.25);
+      outline-offset: -8px;
     }
 
     .top-line {
@@ -141,8 +145,12 @@
     }
 
     @media (max-width: 620px) {
-      .overlay { padding: 9% 10% 10%; }
-      .top-line { margin-top: 10.5%; }
+      .overlay {
+        inset: 6.8% 8.8% 5.5%;
+        padding: 4.2% 4.6% 5.8%;
+      }
+
+      .top-line { margin-top: 10.8%; }
     }
   </style>
 </head>
