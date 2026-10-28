@@ -6,7 +6,7 @@
 <title>Wedding Card (Blank)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   * { box-sizing: border-box; }
   body { margin:0; min-height:100vh; display:grid; place-items:center; padding:16px;
@@ -16,122 +16,165 @@
   .card img { position:absolute; inset:0; width:100%; height:100%; display:block; }
   .text-layer {
     position: absolute;
-    inset: 8.2% 12% 8.5%;
+    inset: 6.9% 10.7% 6.8%;
     text-align: center;
     color: #2f3b3c;
-    padding: 4.2% 6.5% 5.5%;
+    padding: 2.8% 5.4% 3.2%;
     font-family: "Cinzel", serif;
   }
 
   .family {
-    margin: 7% 0 4.5%;
-    font-size: clamp(10px, 1.25vw, 15px);
-    letter-spacing: 0.18em;
+    margin: 8.5% 0 3.8%;
+    font-size: clamp(10px, 1.12vw, 15px);
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #4f5b5b;
+    color: #3f4d4e;
   }
 
   .name {
     margin: 0;
-    font-family: "Great Vibes", cursive;
-    font-size: clamp(44px, 8vw, 82px);
-    line-height: 0.9;
-    color: #9b7420;
+    font-family: "Alex Brush", cursive;
+    font-size: clamp(64px, 8.9vw, 122px);
+    line-height: 0.78;
+    color: #9a731f;
     font-weight: 400;
   }
 
   .and {
-    margin: 1.2% 0;
-    font-size: clamp(10px, 1.2vw, 15px);
-    letter-spacing: 0.28em;
+    margin: 2.6% 0 1.2%;
+    font-size: clamp(11px, 1.22vw, 16px);
+    letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: #4f5b5b;
+    color: #3f4d4e;
   }
 
   .invite {
-    margin: 4.8% 0 5.8%;
-    font-size: clamp(10px, 1.2vw, 15px);
-    letter-spacing: 0.12em;
+    margin: 5.2% 0 2.8%;
+    font-size: clamp(10px, 1.24vw, 17px);
+    letter-spacing: 0.11em;
+    line-height: 1.34;
     text-transform: uppercase;
     color: #3d4747;
+  }
+
+  .ornament {
+    margin: 0 auto 2.2%;
+    width: fit-content;
+    color: #b08931;
+    font-size: clamp(19px, 2.2vw, 30px);
+    line-height: 1;
   }
 
   .meta {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 2.5%;
+    margin-top: 0;
+    align-items: end;
+    gap: 0;
+  }
+
+  .meta-col {
+    border-top: 1px solid rgba(174, 134, 54, 0.6);
+    border-bottom: 1px solid rgba(174, 134, 54, 0.6);
+    padding: 0.5rem 0.25rem 0.62rem;
+  }
+
+  .meta-col.center {
+    border-left: 1px solid rgba(174, 134, 54, 0.6);
+    border-right: 1px solid rgba(174, 134, 54, 0.6);
   }
 
   .label {
     margin: 0;
-    font-size: clamp(10px, 1.2vw, 14px);
+    font-size: clamp(10px, 1.08vw, 14px);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #4f5b5b;
   }
 
   .value {
-    margin: 0.35rem 0 0;
-    font-size: clamp(13px, 1.9vw, 24px);
-    letter-spacing: 0.04em;
+    margin: 0.26rem 0 0;
+    font-size: clamp(22px, 2.7vw, 45px);
+    letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #8f6817;
-    font-weight: 600;
+    font-weight: 500;
+    line-height: 0.95;
   }
 
   .year {
-    margin: 0.2rem 0 0;
-    font-size: clamp(10px, 1.2vw, 15px);
+    margin: 0.28rem 0 0;
+    font-size: clamp(10px, 1.18vw, 16px);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #4f5b5b;
   }
 
+  .tagline {
+    margin: 3% 0 3.2%;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(22px, 2.5vw, 36px);
+    color: #3f5052;
+    font-style: italic;
+    line-height: 1;
+  }
+
   .venue {
-    margin: 7.2% 0 0;
+    margin: 4.6% 0 0;
+    border-top: 1px solid rgba(174, 134, 54, 0.55);
+    border-bottom: 1px solid rgba(174, 134, 54, 0.55);
+    padding: 0.95rem 0.45rem 0.8rem;
   }
 
   .venue-title {
     margin: 0;
-    font-size: clamp(15px, 2vw, 27px);
-    letter-spacing: 0.06em;
+    font-size: clamp(29px, 3.15vw, 52px);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #1f2d2f;
+    color: #1f3134;
   }
 
   .venue-address {
-    margin: 0.45rem 0 0;
-    font-size: clamp(12px, 1.5vw, 20px);
-    color: #364345;
+    margin: 0.35rem 0 0;
+    font-size: clamp(19px, 2.2vw, 33px);
+    letter-spacing: 0.05em;
+    color: #33464a;
+    text-transform: uppercase;
   }
 
   .reception {
-    margin: 7.5% 0 0;
+    margin: 4.8% 0 0;
     color: #465758;
   }
 
   .reception-line {
     margin: 0;
-    font-family: "Great Vibes", cursive;
-    font-size: clamp(24px, 3.3vw, 42px);
+    font-family: "Alex Brush", cursive;
+    font-size: clamp(54px, 5.5vw, 82px);
     line-height: 1;
+    color: #2e667f;
   }
 
   .reception-hall {
-    margin: 0.45rem 0 0;
-    font-size: clamp(12px, 1.5vw, 20px);
+    margin: 0.48rem 0 0;
+    font-size: clamp(17px, 2.1vw, 31px);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
+    color: #324248;
   }
 
   @media (max-width: 620px) {
     .text-layer {
-      inset: 7% 8.8% 7%;
-      padding: 6% 6.5% 7%;
+      inset: 6.8% 8.6% 6.5%;
+      padding: 4.8% 4.8% 5.2%;
     }
 
     .family {
-      margin-top: 11%;
+      margin-top: 11.5%;
+    }
+
+    .reception-line {
+      font-size: clamp(40px, 7vw, 60px);
     }
   }
 </style>
@@ -148,21 +191,25 @@
 
       <p class="invite">Joyfully invite you to celebrate their wedding</p>
 
+      <p class="ornament">❦</p>
+
       <div class="meta">
-        <div>
+        <div class="meta-col">
           <p class="label">Day</p>
           <p class="value">Monday</p>
         </div>
-        <div>
+        <div class="meta-col center">
           <p class="label">Date</p>
           <p class="value">January 25</p>
           <p class="year">2027</p>
         </div>
-        <div>
+        <div class="meta-col">
           <p class="label">Time</p>
           <p class="value">10:30AM</p>
         </div>
       </div>
+
+      <p class="tagline">♥ two hearts, one faith, one promise ♥</p>
 
       <section class="venue">
         <h2 class="venue-title">St. Joseph's Church</h2>
