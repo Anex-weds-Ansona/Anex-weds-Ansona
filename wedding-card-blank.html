@@ -11,16 +11,12 @@
   * { box-sizing: border-box; }
   body { margin:0; min-height:100vh; display:grid; place-items:center; padding:16px;
          background: radial-gradient(circle at 20% 20%, #f3e8cb 0%, #e0cfab 55%, #cfbc93 100%); }
-  .card { position:relative; width:min(95vw,760px); aspect-ratio:1110/1493;
+  .card { position:relative; width:min(760px, calc(100vw - 24px), calc((100vh - 24px) * 1110 / 1493)); aspect-ratio:1110/1493;
           box-shadow:0 24px 52px rgba(30,24,10,.28); overflow:hidden; }
   .card img { position:absolute; inset:0; width:100%; height:100%; display:block; }
   .text-layer {
     position: absolute;
     inset: 8.2% 12% 8.5%;
-    background: #fefbf3;
-    border: 1px solid rgba(184, 148, 77, 0.5);
-    outline: 1px solid rgba(184, 148, 77, 0.25);
-    outline-offset: -7px;
     text-align: center;
     color: #2f3b3c;
     padding: 4.2% 6.5% 5.5%;
