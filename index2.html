@@ -1,410 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wedding Invitation | Anex & Ann</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation | Anex & Ansona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-backdrop: #1e1d1b;
-      --card-bg: #fcf9f2;
-      --gold-primary: #947128;
-      --gold-dark: #6e5218;
-      --gold-border: #c8aa68;
-      --text-main: #2b261f;
-      --text-muted: #6f6759;
-      --font-script: 'Alex Brush', cursive;
-      --font-caps: 'Cinzel', serif;
-      --font-body: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Montserrat', sans-serif;
+      --gold: #9b7420;
+      --ink: #2f3a3a;
+      --soft-bg: #eee2c6;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; }
 
     body {
-      background-color: var(--bg-backdrop);
-      font-family: var(--font-body);
-      color: var(--text-main);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin: 0;
       min-height: 100vh;
-      padding: 20px 12px;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Outer Container */
-    .card-wrapper {
-      width: 100%;
-      max-width: 520px;
-      background: var(--card-bg);
-      border-radius: 4px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-      position: relative;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 20% 20%, #f3e8cb 0%, #e0cfab 55%, #cfbc93 100%);
       padding: 16px;
+      color: var(--ink);
     }
 
-    /* Inner Double-Gold Border */
-    .card-inner {
+    .card {
       position: relative;
-      background: #fffefb;
-      border: 1px solid rgba(200, 170, 104, 0.5);
-      outline: 2px solid var(--gold-border);
-      outline-offset: -7px;
-      padding: 44px 24px 36px;
-      text-align: center;
+      width: min(95vw, 760px);
+      aspect-ratio: 1110 / 1536;
+      box-shadow: 0 24px 52px rgba(30, 24, 10, 0.28);
+      border-radius: 2px;
       overflow: hidden;
     }
 
-    /* Floral Corner Ornaments */
-    .floral-corner {
+    .card img {
       position: absolute;
-      width: 90px;
-      height: 90px;
-      pointer-events: none;
-      opacity: 0.85;
-      z-index: 1;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
-    .top-left { top: 0; left: 0; }
-    .top-right { top: 0; right: 0; transform: scaleX(-1); }
-    .bottom-left { bottom: 0; left: 0; transform: scaleY(-1); }
-    .bottom-right { bottom: 0; right: 0; transform: scale(-1, -1); }
 
-    /* Cross Header */
-    .cross-wrap {
+    .overlay {
+      position: absolute;
+      inset: 0;
+      padding: 10% 14% 11%;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-    .cross-icon {
-      width: 28px;
-      height: 42px;
-      fill: var(--gold-primary);
-      filter: drop-shadow(0 1px 2px rgba(148, 113, 40, 0.25));
+      justify-content: flex-start;
     }
 
-    .family-subtitle {
-      font-family: var(--font-caps);
-      font-size: 0.68rem;
-      letter-spacing: 3px;
+    .top-line {
+      margin: 7.2% 0 4.2%;
+      font: 500 clamp(11px, 1.3vw, 16px) / 1.1 Cinzel, serif;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 10px;
+      color: #4f5959;
     }
 
-    /* Couple Names */
-    .names-section {
-      margin: 14px 0 10px;
-    }
-    .bride-groom {
-      font-family: var(--font-script);
-      font-size: clamp(3.6rem, 13vw, 4.6rem);
-      line-height: 0.95;
-      color: var(--gold-dark);
-      display: block;
-      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
-    }
-    .and-text {
-      font-family: var(--font-caps);
-      font-size: 0.72rem;
-      letter-spacing: 4px;
-      color: var(--text-muted);
-      display: block;
-      margin: 4px 0;
+    .name {
+      margin: 0;
+      color: var(--gold);
+      font: 400 clamp(44px, 8vw, 82px) / 0.9 "Great Vibes", cursive;
     }
 
-    .invitation-line {
-      font-family: var(--font-caps);
-      font-size: 0.68rem;
-      letter-spacing: 2.5px;
+    .and {
+      margin: 1.1% 0 1.2%;
+      font: 500 clamp(11px, 1.3vw, 16px) / 1.1 Cinzel, serif;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: var(--text-main);
-      line-height: 1.6;
-      margin: 14px 0;
+      color: #4f5959;
     }
 
-    /* Decorative Divider */
-    .gold-divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      max-width: 240px;
-      margin: 12px auto;
-    }
-    .gold-divider .line {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-border), transparent);
-    }
-    .gold-divider .symbol {
-      color: var(--gold-primary);
-      font-size: 0.75rem;
-    }
-
-    /* Date Box */
-    .date-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      margin: 18px 0;
-      border-top: 1px solid rgba(200, 170, 104, 0.35);
-      border-bottom: 1px solid rgba(200, 170, 104, 0.35);
-      padding: 10px 0;
-    }
-    .date-side {
-      flex: 1;
-      font-family: var(--font-caps);
-      font-size: 0.72rem;
-      letter-spacing: 2px;
-      color: var(--text-main);
-      font-weight: 600;
-    }
-    .date-middle {
-      flex: 1.4;
-      border-left: 1px solid rgba(200, 170, 104, 0.35);
-      border-right: 1px solid rgba(200, 170, 104, 0.35);
-      padding: 0 6px;
-    }
-    .date-middle .month {
-      font-family: var(--font-caps);
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-    }
-    .date-middle .day {
-      font-family: var(--font-body);
-      font-size: 2.2rem;
-      line-height: 1;
-      font-weight: 600;
-      color: var(--gold-dark);
-      margin: 2px 0;
-    }
-    .date-middle .year {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      letter-spacing: 1.5px;
-      color: var(--text-muted);
-    }
-
-    .tagline {
-      font-family: var(--font-body);
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--gold-dark);
-      margin: 12px 0 20px;
-    }
-
-    /* Venue Blocks */
-    .venue-group {
-      margin-bottom: 18px;
-    }
-    .venue-icon {
-      width: 32px;
-      height: 32px;
-      fill: var(--gold-primary);
-      margin-bottom: 6px;
-    }
-    .venue-title {
-      font-family: var(--font-caps);
-      font-size: 0.88rem;
-      letter-spacing: 2px;
-      color: var(--text-main);
-      font-weight: 600;
-      margin-bottom: 3px;
-    }
-    .venue-address {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    .reception-script {
-      font-family: var(--font-script);
-      font-size: 2.2rem;
-      color: var(--gold-dark);
-      line-height: 1;
-      margin-top: 14px;
-    }
-
-    /* Bible Scripture */
-    .verse-wrap {
-      margin-top: 22px;
-      padding-top: 14px;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      font-style: italic;
-      color: var(--text-muted);
-    }
-    .verse-ref {
-      display: block;
-      font-style: normal;
-      font-family: var(--font-sans);
-      font-size: 0.68rem;
-      letter-spacing: 1.5px;
+    .invite {
+      margin: 4.2% 0 5%;
+      font: 500 clamp(10px, 1.2vw, 15px) / 1.35 Cinzel, serif;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gold-dark);
-      margin-top: 4px;
+      color: #3b4748;
     }
 
-    /* Action Buttons (RSVP & Map) */
-    .button-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 24px;
-    }
-    .btn {
-      display: inline-flex;
+    .meta {
+      margin-top: 3.8%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 18px;
-      border-radius: 25px;
-      font-family: var(--font-caps);
-      font-size: 0.72rem;
-      letter-spacing: 2px;
+    }
+
+    .meta .label {
+      margin: 0;
+      font: 600 clamp(11px, 1.2vw, 14px) / 1 Cinzel, serif;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.25s ease;
-      cursor: pointer;
+      color: #4d5758;
     }
-    .btn-gold {
-      background: linear-gradient(135deg, #a88339, #8c6d2d);
-      color: #fff;
-      border: none;
-      box-shadow: 0 4px 12px rgba(140, 109, 45, 0.3);
+
+    .meta .value {
+      margin: 0.35rem 0 0;
+      font: 600 clamp(13px, 1.8vw, 24px) / 1.05 Cinzel, serif;
+      letter-spacing: 0.03em;
+      color: #8e6817;
+      text-transform: uppercase;
     }
-    .btn-gold:hover {
-      background: linear-gradient(135deg, #b89345, #9c7b33);
-      transform: translateY(-1px);
+
+    .meta .sub {
+      margin: 0.22rem 0 0;
+      font: 500 clamp(10px, 1.2vw, 15px) / 1 Cinzel, serif;
+      letter-spacing: 0.12em;
+      color: #4d5758;
+      text-transform: uppercase;
     }
-    .btn-outline {
-      background: transparent;
-      color: var(--text-main);
-      border: 1px solid var(--gold-border);
+
+    .tag {
+      margin: 6.2% 0 3.2%;
+      font: 400 clamp(22px, 3.2vw, 40px) / 1 "Great Vibes", cursive;
+      color: #56686a;
     }
-    .btn-outline:hover {
-      background: #fbf6ec;
+
+    .venue {
+      margin: 4.2% 0 0;
+    }
+
+    .venue .title {
+      margin: 0;
+      font: 600 clamp(15px, 2vw, 28px) / 1.1 Cinzel, serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #1f2c2e;
+    }
+
+    .venue .addr {
+      margin: 0.35rem 0 0;
+      font: 500 clamp(12px, 1.5vw, 20px) / 1.3 Cinzel, serif;
+      color: #394648;
+    }
+
+    @media (max-width: 620px) {
+      .overlay { padding: 9% 10% 10%; }
+      .top-line { margin-top: 10.5%; }
     }
   </style>
 </head>
 <body>
+  <section class="card" aria-label="Wedding invitation">
+    <img src="assets/invitation-reference.jpeg" alt="Wedding invitation floral frame" />
 
-  <div class="card-wrapper">
-    <div class="card-inner">
+    <div class="overlay">
+      <p class="top-line">Together with their families</p>
 
-      <!-- Corner Botanical SVG Leaves -->
-      <svg class="floral-corner top-left" viewBox="0 0 100 100" fill="none">
-        <path d="M0,0 C32,12 60,32 75,75 C45,58 16,35 0,0 Z" fill="#947128" opacity="0.25"/>
-        <circle cx="22" cy="22" r="14" fill="#c8aa68" opacity="0.35"/>
-        <path d="M6,46 C18,34 36,28 56,26 C40,40 25,56 6,46 Z" fill="#6e5218" opacity="0.3"/>
-      </svg>
-      <svg class="floral-corner top-right" viewBox="0 0 100 100" fill="none">
-        <path d="M0,0 C32,12 60,32 75,75 C45,58 16,35 0,0 Z" fill="#947128" opacity="0.25"/>
-        <circle cx="22" cy="22" r="14" fill="#c8aa68" opacity="0.35"/>
-        <path d="M6,46 C18,34 36,28 56,26 C40,40 25,56 6,46 Z" fill="#6e5218" opacity="0.3"/>
-      </svg>
-      <svg class="floral-corner bottom-left" viewBox="0 0 100 100" fill="none">
-        <path d="M0,0 C32,12 60,32 75,75 C45,58 16,35 0,0 Z" fill="#947128" opacity="0.25"/>
-        <circle cx="22" cy="22" r="14" fill="#c8aa68" opacity="0.35"/>
-      </svg>
-      <svg class="floral-corner bottom-right" viewBox="0 0 100 100" fill="none">
-        <path d="M0,0 C32,12 60,32 75,75 C45,58 16,35 0,0 Z" fill="#947128" opacity="0.25"/>
-        <circle cx="22" cy="22" r="14" fill="#c8aa68" opacity="0.35"/>
-      </svg>
+      <h1 class="name">Anex</h1>
+      <p class="and">and</p>
+      <h1 class="name">Ansona</h1>
 
-      <!-- Golden Cross -->
-      <div class="cross-wrap">
-        <svg class="cross-icon" viewBox="0 0 24 36">
-          <path d="M10,0 H14 V10 H22 V14 H14 V36 H10 V14 H2 V10 H10 Z" />
-        </svg>
-      </div>
+      <p class="invite">Joyfully invite you to celebrate their wedding</p>
 
-      <p class="family-subtitle">Together with their families</p>
-
-      <!-- Names -->
-      <div class="names-section">
-        <span class="bride-groom">Anex</span>
-        <span class="and-text">and</span>
-        <span class="bride-groom">Ann</span>
-      </div>
-
-      <p class="invitation-line">Joyfully invite you to celebrate<br>their wedding</p>
-
-      <div class="gold-divider">
-        <span class="line"></span>
-        <span class="symbol">❦</span>
-        <span class="line"></span>
-      </div>
-
-      <!-- Date / Time -->
-      <div class="date-container">
-        <div class="date-side">Saturday</div>
-        <div class="date-middle">
-          <div class="month">September</div>
-          <div class="day">26</div>
-          <div class="year">2026</div>
+      <div class="meta">
+        <div>
+          <p class="label">Day</p>
+          <p class="value">Sunday</p>
         </div>
-        <div class="date-side">At 11:00 AM</div>
+        <div>
+          <p class="label">Date</p>
+          <p class="value">Jan 25</p>
+          <p class="sub">2026</p>
+        </div>
+        <div>
+          <p class="label">Time</p>
+          <p class="value">10:30 AM</p>
+        </div>
       </div>
 
-      <p class="tagline">♥ two hearts, one faith, one promise ♥</p>
+      <p class="tag">two hearts, one faith, one promise</p>
 
-      <!-- Church Ceremony -->
-      <div class="venue-group">
-        <svg class="venue-icon" viewBox="0 0 24 24">
-          <path d="M12 2L9 5V8H7V10H9V21H11V15H13V21H15V10H17V8H15V5L12 2M12 5.5L13.5 7H10.5L12 5.5Z"/>
-        </svg>
-        <h3 class="venue-title">St. Mary's Church</h3>
-        <p class="venue-address">Kattappana, Kerala</p>
+      <div class="venue">
+        <p class="title">St. Joseph's Church</p>
+        <p class="addr">Pezhumkandam, Kanchiyar, Idukki, Kerala 685511</p>
       </div>
-
-      <div class="gold-divider">
-        <span class="line"></span>
-        <span class="symbol">♦</span>
-        <span class="line"></span>
-      </div>
-
-      <!-- Reception -->
-      <div class="venue-group">
-        <div class="reception-script">Reception to follow</div>
-        <h3 class="venue-title" style="margin-top: 6px;">Parish Hall & Grounds</h3>
-        <p class="venue-address">Kattappana, Kerala</p>
-      </div>
-
-      <!-- Scripture -->
-      <div class="verse-wrap">
-        “Let all that you do be done in love.”
-        <span class="verse-ref">— 1 Corinthians 16:14</span>
-      </div>
-
-      <!-- Quick Action Buttons -->
-      <div class="button-group">
-        <!-- Replace with your WhatsApp number -->
-        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Anex%20%26%20Ann,%20I%20will%20be%20attending%20your%20wedding!" target="_blank" class="btn btn-gold">
-          RSVP via WhatsApp
-        </a>
-        <!-- Replace with your Google Maps link -->
-        <a href="https://maps.google.com" target="_blank" class="btn btn-outline">
-          📍 View Location Map
-        </a>
-      </div>
-
     </div>
-  </div>
-
+  </section>
 </body>
 </html>
